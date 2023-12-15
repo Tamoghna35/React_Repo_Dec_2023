@@ -8,16 +8,16 @@ const messages = [
 
 export default function App() {
   const [step, setStep] = useState(1);
-
   const [isOpen, setIsOpen] = useState(true);
+
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((currentStep) => currentStep + 1);
   }
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((currentStep) => currentStep - 1);
   }
   function handleOpenClose() {
-    setIsOpen(!isOpen);
+    setIsOpen((isOpenCurrent) => !isOpenCurrent);
   }
 
   return (
